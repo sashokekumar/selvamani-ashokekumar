@@ -1,0 +1,253 @@
+cat << 'EOF' > index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Architect Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-green: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --font-stack: 'SF Mono', Consolas, 'Fira Code', Monaco, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background-color: #21262d;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+        }
+
+        .control-dot.green { background-color: var(--accent-green); }
+
+        .window-title {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .terminal-body {
+            padding: 40px;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .title-sub {
+            color: var(--accent-green);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .title-sub::before {
+            content: ">";
+            font-weight: bold;
+        }
+
+        .video-showcase-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #070a0e;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .video-showcase-frame iframe, 
+        .video-showcase-frame video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .capability-statement {
+            font-size: 1.05rem;
+            color: #e6edf3;
+            border-left: 3px solid var(--accent-green);
+            padding-left: 20px;
+            margin-bottom: 35px;
+        }
+
+        .control-panel {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 30px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            background-color: transparent;
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 12px 24px;
+            font-family: var(--font-stack);
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-glow);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.03);
+            box-shadow: none;
+        }
+
+        .status-footer {
+            background-color: rgba(16, 185, 129, 0.04);
+            border: 1px dashed rgba(16, 185, 129, 0.3);
+            border-radius: 4px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+
+        .status-text {
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .status-text strong {
+            color: var(--accent-green);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .terminal-body { padding: 20px; }
+            .control-panel { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="window-controls">
+                <div class="control-dot"></div>
+                <div class="control-dot"></div>
+                <div class="control-dot green"></div>
+            </div>
+            <div class="window-title">core_architecture_session</div>
+            <div></div>
+        </div>
+
+        <div class="terminal-body">
+            <header>
+                <h1>Ashokekumar Selvamani</h1>
+                <div class="title-sub">Enterprise AI Architect</div>
+            </header>
+
+            <div class="video-showcase-frame">
+                <iframe src="https://www.loom.com/embed/your-video-id-here" allowfullscreen></iframe>
+            </div>
+
+            <div class="capability-statement">
+                Engineering unified, multi-layer ingestion frameworks that digest complex corporate software, infrastructure, and systemic configurations in hours to eradicate point-solution AI fragmentation and power deterministic autonomous operations.
+            </div>
+
+            <div class="control-panel">
+                <a href="resume.pdf" target="_blank" class="btn">[ View System Resume ]</a>
+                <a href="https://github.com/selvamani-ashokekumar" target="_blank" class="btn btn-secondary">[ View Engineering Specs ]</a>
+            </div>
+
+            <div class="status-footer">
+                <div class="pulse-indicator"></div>
+                <div class="status-text">
+                    <strong>IMMIGRATION PIPELINE STATUS:</strong> Active H-1B Holder. Authorization verified and ready for seamless employer migration via <strong>Premium Processing</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+EOF
