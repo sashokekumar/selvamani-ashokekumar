@@ -1,1 +1,864 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ashok Selvamani</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:#0b1020;color:#eef2ff;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}.container{width:min(1200px,92vw);height:92vh;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:42px;background:linear-gradient(#11182d,#0b1020);display:grid;grid-template-rows:auto auto 1fr auto;gap:20px}h1{font-size:3rem}h2{font-size:1.4rem;color:#7dd3fc;font-weight:500}.lead{line-height:1.6;color:#d1d5db}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.flow,.card{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}.flow{text-align:center}.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}.footer{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.08);padding-top:14px}.footer a{color:#7dd3fc;text-decoration:none;margin-right:16px}.arrow{color:#7dd3fc;padding:4px}</style></head><body><div class="container"><div><h1>Ashok Selvamani</h1><h2>Architecting AI‑Native Enterprise Systems</h2></div><div class="lead">I design enterprise AI platforms that transform fragmented operational ecosystems into intelligent, governed systems capable of reasoning, automation and decision support. The engineering patterns presented here are distilled from experience delivering solutions in large enterprise environments without exposing proprietary implementations.</div><div class="grid"><div class="flow"><b>Enterprise Complexity</b><div class="arrow">↓</div>Discover & Ingest<div class="arrow">↓</div>Normalize & Correlate<div class="arrow">↓</div>Build Enterprise Context<div class="arrow">↓</div>AI Reasoning & Governance<div class="arrow">↓</div><b>Operational Intelligence</b><br>Automation • Compliance • Decision Support</div><div class="cards"><div class="card"><b>Enterprise AI Architecture</b><br>Scalable AI-native platforms.</div><div class="card"><b>Knowledge Intelligence</b><br>Connected enterprise context.</div><div class="card"><b>Agentic Automation</b><br>Deterministic execution.</div><div class="card"><b>Security & Governance</b><br>Explainable AI by design.</div><div class="card"><b>Platform Modernization</b><br>Legacy to modern integration.</div><div class="card"><b>Production Engineering</b><br>Reliable operational systems.</div></div></div><div class="footer"><div><a href="#">Technical Resume</a><a href="#">Architecture Portfolio</a><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Contact</a></div><div style="color:#9ca3af">Enterprise engineering patterns. Client implementations remain confidential.</div></div></div></body></html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ashokekumar Selvamani | Enterprise Intelligence Layer</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  color: #ffffff;
+  background: #02040a;
+}
+
+/* Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0,130,255,.30), transparent 28%),
+    radial-gradient(circle at 82% 12%, rgba(0,255,180,.14), transparent 26%),
+    radial-gradient(circle at 55% 92%, rgba(90,40,255,.24), transparent 36%),
+    linear-gradient(135deg, #02040a 0%, #07111f 50%, #030611 100%);
+  z-index: -3;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  z-index: -2;
+}
+
+.orb {
+  position: fixed;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,160,255,.22), transparent 65%);
+  filter: blur(24px);
+  top: -140px; right: 6%;
+  z-index: -1;
+  animation: float 9s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0) translateX(0); }
+  to   { transform: translateY(44px) translateX(-36px); }
+}
+
+/* Shell */
+.shell {
+  width: min(1840px, 97vw);
+  height: 96vh;
+  margin: 2vh auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+}
+
+/* ── HEADER ─────────────────────────────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 8px 4px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.header-left { line-height: 1; }
+
+.name {
+  font-size: clamp(28px, 3.2vw, 58px);
+  font-weight: 950;
+  letter-spacing: -2.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.creator-line {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.creator-label {
+  color: #67b7ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.aura-badge {
+  background: linear-gradient(90deg, rgba(0,130,255,.18), rgba(0,200,180,.10));
+  border: 1px solid rgba(0,180,255,.32);
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #a0e4ff;
+}
+
+.tagline {
+  margin-top: 7px;
+  color: #7da8cc;
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+
+.status {
+  color: #47ff8b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(71,255,139,.4);
+  padding-bottom: 4px;
+}
+
+/* ── MAIN ───────────────────────────────────── */
+main {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 20px;
+}
+
+/* ── VIDEO ──────────────────────────────────── */
+.video-frame {
+  position: relative;
+  min-height: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(120,200,255,.22);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 40px 100px rgba(0,0,0,.60),
+    0 0 80px rgba(0,130,255,.16);
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Project label — top-left corner, pointer-events:none so video is still clickable */
+.video-label {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.video-label .vl-eyebrow {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #64c8ff;
+  margin-bottom: 5px;
+}
+
+.video-label .vl-name {
+  font-size: clamp(14px, 1.4vw, 22px);
+  font-weight: 950;
+  letter-spacing: -.5px;
+  line-height: 1.1;
+}
+
+.video-label .vl-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #b0d4f0;
+  letter-spacing: .3px;
+}
+
+/* Scrim only behind the label area */
+.video-frame::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 42%;
+  background:
+    linear-gradient(to bottom, rgba(2,4,10,.82) 0%, rgba(2,4,10,.38) 55%, transparent 100%),
+    linear-gradient(to right, rgba(2,4,10,.70), transparent 50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.video-frame::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ── RIGHT PANEL ────────────────────────────── */
+.panel {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 14px;
+}
+
+.glass {
+  background: linear-gradient(145deg, rgba(12,20,32,.88), rgba(6,12,22,.74));
+  border: 1px solid rgba(130,205,255,.15);
+  border-radius: 22px;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.36),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter: blur(18px);
+}
+
+/* Card 1 — WHO */
+.card-who {
+  padding: 24px 28px 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-who::after {
+  content: "";
+  position: absolute;
+  width: 340px; height: 340px;
+  right: -110px; top: -120px;
+  background: radial-gradient(circle, rgba(0,160,255,.16), transparent 60%);
+  pointer-events: none;
+}
+
+.card-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #67b7ff;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.card-who .platform-name {
+  position: relative;
+  font-size: clamp(18px, 1.9vw, 32px);
+  font-weight: 950;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.card-who .platform-tag {
+  position: relative;
+  font-size: 13px;
+  font-weight: 700;
+  color: #67b7ff;
+  letter-spacing: .4px;
+  margin-bottom: 14px;
+}
+
+.card-who .proof {
+  position: relative;
+  font-size: clamp(11px, .95vw, 14px);
+  color: #b8d4ee;
+  line-height: 1.55;
+  border-left: 2px solid rgba(100,200,255,.35);
+  padding-left: 12px;
+}
+
+/* Card 2 — WHY IT MATTERS */
+.card-why {
+  padding: 22px 26px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.card-why .body {
+  font-size: clamp(12px, 1.05vw, 16px);
+  color: #d0e6ff;
+  line-height: 1.65;
+}
+
+.card-why .body strong {
+  color: #ffffff;
+  display: block;
+  font-size: clamp(14px, 1.3vw, 20px);
+  font-weight: 900;
+  letter-spacing: -.5px;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+/* Card 3 — WHY YOU */
+.card-proof {
+  padding: 22px 26px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.proof-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+
+.proof-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: clamp(11px, .95vw, 14px);
+  color: #c8ddf2;
+  line-height: 1.35;
+}
+
+.proof-item::before {
+  content: "\25B8";
+  color: #67b7ff;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 11px;
+}
+
+/* ── CONTACT MODAL ─────────────────────────── */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(2,4,10,.72);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.modal-card {
+  background: linear-gradient(145deg, rgba(10,18,30,.97), rgba(5,10,20,.97));
+  border: 1px solid rgba(130,205,255,.22);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 40px 120px rgba(0,0,0,.80),
+    0 0 100px rgba(0,130,255,.18);
+  width: min(480px, 92vw);
+  padding: 40px 40px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-card::before {
+  content: "";
+  position: absolute;
+  width: 400px; height: 400px;
+  right: -140px; top: -160px;
+  background: radial-gradient(circle, rgba(0,140,255,.14), transparent 62%);
+  pointer-events: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px; right: 20px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  color: #8ab0cc;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s ease;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: rgba(255,255,255,.13);
+  color: #fff;
+}
+
+.modal-eyebrow {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #64c8ff;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.modal-name {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 950;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.modal-title {
+  font-size: 13px;
+  color: #67b7ff;
+  font-weight: 700;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin: 0 0 24px;
+}
+
+.modal-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.modal-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.modal-contact-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(0,130,255,.20), rgba(0,80,180,.12));
+  border: 1px solid rgba(100,200,255,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.modal-contact-info { flex: 1; }
+
+.modal-contact-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #67b7ff;
+  margin-bottom: 2px;
+}
+
+.modal-contact-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e8f2ff;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.modal-contact-value:hover { color: #a0d8ff; }
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.modal-btn {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .22s ease;
+  border: 1px solid rgba(120,200,255,.18);
+  background: linear-gradient(145deg, rgba(20,35,58,.96), rgba(10,18,32,.96));
+  color: #fff;
+}
+
+.modal-btn:hover {
+  border-color: rgba(103,183,255,.75);
+  box-shadow: 0 8px 28px rgba(0,130,255,.24);
+  transform: translateY(-2px);
+}
+
+/* ── CONTACT MODAL ─────────────────────────── */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(2,4,10,.72);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop.open { display: flex; }
+
+.modal-card {
+  background: linear-gradient(145deg, rgba(10,18,30,.97), rgba(5,10,20,.97));
+  border: 1px solid rgba(130,205,255,.22);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 40px 120px rgba(0,0,0,.80),
+    0 0 100px rgba(0,130,255,.18);
+  width: min(480px, 92vw);
+  padding: 40px 40px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-card::before {
+  content: "";
+  position: absolute;
+  width: 400px; height: 400px;
+  right: -140px; top: -160px;
+  background: radial-gradient(circle, rgba(0,140,255,.14), transparent 62%);
+  pointer-events: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px; right: 20px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  color: #8ab0cc;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s ease;
+}
+
+.modal-close:hover { background: rgba(255,255,255,.13); color: #fff; }
+
+.modal-eyebrow {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #64c8ff;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.modal-name {
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 950;
+  letter-spacing: -1.5px;
+  line-height: .95;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.modal-title {
+  font-size: 12px;
+  color: #67b7ff;
+  font-weight: 700;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin: 0 0 22px;
+}
+
+.modal-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 26px;
+  position: relative;
+}
+
+.modal-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.modal-contact-icon {
+  width: 40px; height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(145deg, rgba(0,130,255,.18), rgba(0,80,180,.10));
+  border: 1px solid rgba(100,200,255,.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.modal-contact-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #67b7ff;
+  margin-bottom: 2px;
+}
+
+.modal-contact-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e8f2ff;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.modal-contact-value:hover { color: #a0d8ff; }
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.modal-btn {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 11px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  border: 1px solid rgba(120,200,255,.18);
+  background: linear-gradient(145deg, rgba(20,35,58,.96), rgba(10,18,32,.96));
+  transition: .22s ease;
+}
+
+.modal-btn:hover {
+  border-color: rgba(103,183,255,.75);
+  box-shadow: 0 8px 28px rgba(0,130,255,.24);
+  transform: translateY(-2px);
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer {
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding-top: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links { display: flex; gap: 12px; }
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 13px;
+  background: linear-gradient(145deg, rgba(24,39,62,.96), rgba(12,20,34,.96));
+  border: 1px solid rgba(120,200,255,.14);
+  font-weight: 800;
+  font-size: 14px;
+  transition: .22s ease;
+}
+
+.links a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(103,183,255,.75);
+  box-shadow: 0 10px 36px rgba(0,130,255,.26);
+}
+
+.footer-brand {
+  color: #6a8fae;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media(max-width: 1200px) {
+  html, body { overflow: auto; }
+  .shell { height: auto; }
+  main { grid-template-columns: 1fr; }
+  .video-frame { height: 60vh; }
+  footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media(max-width: 700px) {
+  header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .proof-list { grid-template-columns: 1fr; }
+  .links { flex-wrap: wrap; }
+}
+</style>
+</head>
+
+<body>
+<div class="orb"></div>
+
+<div class="shell">
+
+<header>
+  <div class="header-left">
+    <div class="name">Ashokekumar Selvamani</div>
+    <div class="creator-line">
+      <span class="aura-badge">Enterprise Intelligence Layer</span>
+    </div>
+    <div class="tagline">Architect &middot; Builder &middot; Enterprise AI Platform</div>
+  </div>
+  <div class="status">Open to Leadership Opportunities</div>
+</header>
+
+<main>
+
+  <section class="video-frame">
+    <video controls loop playsinline>
+      <source src="assets/Overview.mp4" type="video/mp4" />
+    </video>
+    <div class="video-label">
+      <div class="vl-eyebrow">Project Showcase</div>
+      <div class="vl-name">Enterprise Intelligence Layer</div>
+      <div class="vl-sub">The AI-native foundation for enterprise engineering.</div>
+    </div>
+  </section>
+
+  <aside class="panel">
+
+    <!-- WHO ARE YOU -->
+    <section class="card-who glass">
+      <div class="card-label">The Platform</div>
+      <div class="platform-name">Enterprise Intelligence Layer</div>
+      <div class="platform-tag">The AI-native foundation for enterprise engineering.</div>
+      <div class="proof">
+        Used across multiple engineering organizations to transform
+        enterprise knowledge into actionable intelligence for developers,
+        SREs, architects, security, and leadership.
+      </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section class="card-why glass">
+      <div class="card-label">Why It Matters</div>
+      <div class="body">
+        <strong>Engineering teams waste thousands of hours searching across disconnected systems.</strong>
+        Enterprise AI should eliminate that friction&#8202;—&#8202;not add to it.
+        One platform. Shared intelligence. Every team moves faster.
+      </div>
+    </section>
+
+    <!-- WHY YOU -->
+    <section class="card-proof glass">
+      <div class="card-label">Why Me</div>
+      <div class="proof-list">
+        <div class="proof-item">Built from scratch, 0 to production</div>
+        <div class="proof-item">Enterprise-scale adoption</div>
+        <div class="proof-item">Cross-functional platform ownership</div>
+        <div class="proof-item">Hands-on architecture & code</div>
+        <div class="proof-item">AI-native from day one</div>
+        <div class="proof-item">Trusted at scale</div>
+      </div>
+    </section>
+
+  </aside>
+
+</main>
+
+<footer>
+  <div class="links">
+    <a href="assets/Ashok_Kumar_Resume.pdf" target="_blank">Resume</a>
+    <a href="https://github.com/sashokekumar" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/ashokekumar-selvamani-44b1a219/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#" id="contact-btn">Contact</a>
+  </div>
+  <div class="footer-brand">Enterprise AI &bull; Platform Architecture &bull; Intelligent Automation</div>
+</footer>
+
+</div>
+
+<!-- Contact Modal -->
+<div class="modal-backdrop" id="contact-modal" role="dialog" aria-modal="true" aria-label="Contact card">
+  <div class="modal-card">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+    <div class="modal-eyebrow">Get in Touch</div>
+    <div class="modal-name">Ashokekumar<br>Selvamani</div>
+    <div class="modal-title">Enterprise AI &bull; Platform Architecture &bull; Technology Leadership</div>
+    <hr class="modal-divider" />
+
+    <div class="modal-contacts">
+      <div class="modal-contact-row">
+        <div class="modal-contact-icon">&#9993;</div>
+        <div class="modal-contact-info">
+          <div class="modal-contact-label">Email</div>
+          <a class="modal-contact-value" href="mailto:sashokekumar@gmail.com">sashokekumar@gmail.com</a>
+        </div>
+      </div>
+      <div class="modal-contact-row">
+        <div class="modal-contact-icon">&#128222;</div>
+        <div class="modal-contact-info">
+          <div class="modal-contact-label">Phone</div>
+          <a class="modal-contact-value" href="tel:+18563168737">856 316 8737</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <a class="modal-btn" href="https://www.linkedin.com/in/ashokekumar-selvamani-44b1a219/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="modal-btn" href="https://github.com/sashokekumar" target="_blank" rel="noopener">GitHub</a>
+      <a class="modal-btn" href="assets/Ashok_Kumar_Resume.pdf" target="_blank">Resume</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('contact-btn');
+  const modal = document.getElementById('contact-modal');
+  const closeBtn = document.getElementById('modal-close');
+
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', function() {
+    modal.classList.remove('open');
+  });
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') modal.classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
